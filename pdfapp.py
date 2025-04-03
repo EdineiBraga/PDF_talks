@@ -76,6 +76,7 @@ TIPOS_ARQUIVOS_VALIDOS=[
 
 def pagina_chat():
     st.header('📖 Bem vindo!',divider=True,)
+    st.write('Este é um explorador de arquivos.\n1. Selecione o tipo de arquivo.\n2. Inicialize o assistente.\n3. Faça perguntas referentes ao arquivo.')
     chain=st.session_state.get('chain')
     if chain is None:
         st.error('CARREGUE UM DOCUMENTO!')
