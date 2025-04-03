@@ -83,7 +83,7 @@ def pagina_chat():
         st.stop()
     memoria=st.session_state.get('memoria',MEMORIA)
     for mensagem in memoria.buffer_as_messages:
-        chat=st.chat_message(mensagem.type)
+        chat=st.chat_message(mensagem.type,'😎','🤖')
         chat.markdown(mensagem.content)
     input_usuario=st.chat_input('Faça uma pergunta sobre o documento carregado...')
     if input_usuario:
