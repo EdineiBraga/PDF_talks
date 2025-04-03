@@ -87,9 +87,9 @@ def pagina_chat():
     input_usuario=st.chat_input('Faça uma pergunta sobre o documento carregado...')
     if input_usuario:
         memoria.chat_memory.add_user_message(input_usuario)
-        chat=st.chat_message('human')
+        chat=st.chat_message('human',avatar='😎')
         chat.markdown(input_usuario)
-        chat=st.chat_message('ai')
+        chat=st.chat_message('ai',avatar='🤖')
         resposta=chat.write_stream(chain.stream({'input':input_usuario,'chat_history':memoria.buffer_as_messages}))
         memoria.chat_memory.add_ai_message(resposta) 
         st.session_state['memoria']=memoria
