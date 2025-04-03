@@ -82,8 +82,13 @@ def pagina_chat():
         st.error('CARREGUE UM DOCUMENTO!')
         st.stop()
     memoria=st.session_state.get('memoria',MEMORIA)
+
     for mensagem in memoria.buffer_as_messages:
-        chat=st.chat_message(mensagem.type,'😎','🤖')
+        if mensagem.type == "human":
+            chat = st.chat_message("human", avatar="😎")  # Ícone personalizado do usuário
+        else:
+            chat = st.chat_message("ai", avatar="🤖")  # Ícone personalizado da IA
+        #chat=st.chat_message(mensagem.type,'😎','🤖')
         chat.markdown(mensagem.content)
     input_usuario=st.chat_input('Faça uma pergunta sobre o documento carregado...')
     if input_usuario:
