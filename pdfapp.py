@@ -66,7 +66,7 @@ def carrega_modelo(modelo,api_key,tipo_arquivo,arquivo):
     ])
     
    
-    chat=ChatOpenAI(model=modelo,api_key=api_key)
+    chat=ChatOpenAI(model=modelo,api_key=api_key,temperature=0.3)
     chain=template|chat   
     st.session_state['chain']=chain
 
