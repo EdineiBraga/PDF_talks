@@ -119,6 +119,7 @@ def sidebar():
         carrega_modelo(modelo,api_key,tipo_arquivo,arquivo)
     if st.button('Apagar Histórico de Conversa', use_container_width=True):
         st.session_state['memoria'] = MEMORIA
+    st.write("https://www.linkedin.com/in/edinei-fernando-braga-74458939/")   
         
         
                   
